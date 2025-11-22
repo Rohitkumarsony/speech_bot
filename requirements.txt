@@ -1,0 +1,9 @@
+openai-whisper
+TTS
+sounddevice
+pydub
+PyAudio
+librosa
+noisereduce
+numpy
+python-dotenv
