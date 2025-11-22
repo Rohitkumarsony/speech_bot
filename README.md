@@ -94,7 +94,7 @@ docker run --rm -it speech-bot
 - Python 3.10+
 - Whisper STT
 - Coqui TTS (Emotional voices)
-- OpenAI / Gemini / Llama LLMs
+- Llama LLMs
 - NLP-based emotion detection
 - SoundDevice (microphone input)
 - Pydub (audio playback)
