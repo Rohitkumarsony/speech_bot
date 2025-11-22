@@ -102,7 +102,7 @@ docker run --rm -it speech-bot
 ----------------------------------------------------
 
 ## PROJECT STRUCTURE
-
+```
 speech_bot/
 ├── Dockerfile
 ├── main.py
@@ -110,12 +110,12 @@ speech_bot/
 ├── requirements.txt
 ├── src/
 │   └── settings.py
-
+```
 ----------------------------------------------------
 
 ## USAGE
-
 To start:
+```
 python3 main.py
 or
 docker build -t speech-bot .
