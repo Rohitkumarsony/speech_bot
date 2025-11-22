@@ -1,122 +1,121 @@
-## SPEECH TO SPEECH AI BOT
+## SPEECH-TO-SPEECH AI BOT
 
-This project is a real-time Speech-to-Speech conversational bot.
-It listens to the user's voice, converts it into text, understands it using an LLM,
-detects emotion, and replies back using emotional text-to-speech audio.
+A real-time conversational AI system that listens to user speech, converts it into text, understands the meaning using an LLM, detects emotion, and replies back using expressive emotional Text-to-Speech (TTS). Designed for natural, human-like interaction.
 
------------------------------------------
-FEATURES
------------------------------------------
+----------------------------------------------------
 
-1. Real-time voice input using microphone
-2. Whisper-based STT (Speech to Text)
-3. LLM for understanding and generating response
-4. Automatic emotion detection from text
-5. Emotional TTS voice response (happy, sad, excited, calm, neutral)
-6. Multi-model support for Whisper and TTS
-7. Uses .env file to store API keys
-8. Clean modular code structure
-9. Works in local environment and inside Docker
+## FEATURES
 
------------------------------------------
-EMOTION DETECTION LOGIC
------------------------------------------
+- Real-time voice input via microphone
+- Whisper-based Speech-to-Text (STT)
+- LLM-powered response generation (OpenAI / Gemini / Llama supported)
+- Automatic emotion detection (happy, sad, excited, calm, neutral)
+- Emotion-based TTS output using expressive voices
+- Multi-model support for STT and TTS
+- .env support for API key management
+- Modular, clean, maintainable code structure
+- Compatible with both local environment and Docker
 
-The bot identifies user emotion from transcribed text using:
-- sentiment keywords
-- voice intensity
-- speaking speed (optional)
+----------------------------------------------------
+
+## EMOTION DETECTION WORKFLOW
+
+The bot identifies speaker emotion using:
+- Sentiment keyword analysis
+- Voice intensity (optional)
+- Speaking speed (optional)
 - LLM-based emotional classification
 
-It classifies into:
+Supported emotions:
 - happy
 - sad
 - excited
 - calm
 - neutral
 
-This detected emotion is mapped to TTS_EMOTIONS for emotional speech output.
+The detected emotion is mapped to a matching TTS emotion profile.
 
------------------------------------------
-INSTALLATION STEPS
------------------------------------------
+----------------------------------------------------
 
-1. Create virtual environment
-   python3 -m venv env
+## INSTALLATION
 
-2. Activate venv:
-   Linux: source env/bin/activate
-   Windows: env\Scripts\activate
+### 1. Create virtual environment
+python3 -m venv env
 
-3. Install dependencies:
-   pip install -r requirements.txt
+### 2. Activate environment
+Linux/macOS:
+    source env/bin/activate
+Windows:
+    env\Scripts\activate
 
-4. Create .env file:
-   API_KEY=your_api_key
-   LLM_MODEL="meta-llama/llama-4-scout-17b-16e-instruct
+### 3. Install dependencies
+pip install -r requirements.txt
 
------------------------------------------
-GIT WORKFLOW
------------------------------------------
+### 4. Configure .env file
+Create a .env file and add:
+API_KEY=your_api_key
+LLM_MODEL="meta-llama/llama-4-scout-17b-16e-instruct"
 
-Initialize git:
-   git init
+----------------------------------------------------
 
-Add files:
-   git add filename
+## GIT WORKFLOW
 
-Commit:
-   git commit -m "initial commit"
+git init  
+git add .  
+git commit -m "initial commit"  
+git status  
 
-Check status:
-   git status
+----------------------------------------------------
 
------------------------------------------
-RUNNING THE BOT
------------------------------------------
+## RUNNING THE BOT
 
-Start the application:
-   python3 main.py
+### Run locally:
+python3 main.py
 
-The bot will:
-1. Listen from microphone
-2. Convert speech to text (Whisper)
-3. Detect emotion from text
-4. Get response from LLM
-5. Convert response to emotional speech (TTS)
-6. Play the audio output
+### Run using Docker:
+docker build -t speech-bot .
+docker run --rm -it speech-bot
 
------------------------------------------
-SUPPORTED TECHNOLOGIES
------------------------------------------
+----------------------------------------------------
+
+## HOW IT WORKS (PIPELINE)
+
+1. Listens to your voice through the microphone  
+2. Converts speech to text using Whisper  
+3. Detects your emotion  
+4. Generates a smart response using LLM  
+5. Converts the response into emotional speech  
+6. Plays the audio back instantly  
+
+----------------------------------------------------
+
+## TECHNOLOGIES USED
 
 - Python 3.10+
 - Whisper STT
-- Coqui TTS
+- Coqui TTS (Emotional voices)
 - OpenAI / Gemini / Llama LLMs
-- Emotion detection using NLP
-- SoundDevice for microphone input
-- Pydub for audio playback
+- NLP-based emotion detection
+- SoundDevice (microphone input)
+- Pydub (audio playback)
 
------------------------------------------
-FOLDER STRUCTURE
------------------------------------------
+----------------------------------------------------
 
-```
+## PROJECT STRUCTURE
+
 speech_bot/
 ├── Dockerfile
 ├── main.py
-├── README.md
+├── README.txt
 ├── requirements.txt
 ├── src/
-│   └── seetings.py
-```
-# Run the code
-```
-docker build -t speech-bot .
-or 
+│   └── settings.py
+
+----------------------------------------------------
+
+## USAGE
+
+To start:
 python3 main.py
-```
-
-
-
+or
+docker build -t speech-bot .
