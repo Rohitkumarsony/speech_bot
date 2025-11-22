@@ -19,15 +19,6 @@ FEATURES
 9. Works in local environment and inside Docker
 
 -----------------------------------------
-ENVIRONMENT VARIABLES (.env)
------------------------------------------
-
-Create a .env file in project root:
-
-API_KEY=your_api_key_here
-LLM_MODEL=gpt-4o-mini   (or any other model)
-
------------------------------------------
 EMOTION DETECTION LOGIC
 -----------------------------------------
 
