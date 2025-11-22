@@ -113,9 +113,3 @@ speech_bot/
 ```
 ----------------------------------------------------
 
-## USAGE
-To start:
-```
-python3 main.py
-or
-docker build -t speech-bot .
